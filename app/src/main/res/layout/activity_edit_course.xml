@@ -1,0 +1,164 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    tools:context=".EditCourseActivity">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Edit Course"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Vak"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Voer vaknaam in"
+        android:inputType="textPersonName|textCapCharacters"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Studiejaar"
+        android:textColor="@android:color/black" />
+
+    <Spinner
+        android:id="@+id/spinnerYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/year"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="EC"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:id="@+id/editTextEC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Aantal EC"
+        android:inputType="number"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Cijfer"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:id="@+id/editTextGrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Voer cijfer in"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Commentaar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:id="@+id/editTextComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="..."
+        android:inputType="textPersonName|textCapSentences|textMultiLine"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Soort Vak"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="@android:color/black" />
+
+    <Spinner
+        android:id="@+id/spinnerSpecial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/special"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Status"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="@android:color/black" />
+
+    <Spinner
+        android:id="@+id/spinnerStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/status"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <Button
+        android:id="@+id/buttonEditCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Aanpassingen Opslaan"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+</LinearLayout>

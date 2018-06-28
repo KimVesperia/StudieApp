@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">StudieApp</string>
+
+    <array name="year">
+        <item></item>
+        <item>Jaar 1</item>
+        <item>Jaar 2</item>
+        <item>Jaar 3</item>
+        <item>Jaar 4</item>
+    </array>
+    <array name="special">
+        <item></item>
+        <item>Verplicht Vak</item>
+        <item>Project Vak</item>
+        <item>Keuzevak</item>
+    </array>
+    <array name="status">
+        <item></item>
+        <item>Gehaald</item>
+        <item>Herkansen</item>
+        <item>Bezig</item>
+    </array>
+
+</resources>

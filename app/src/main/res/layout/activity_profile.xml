@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    tools:context=".ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_centerVertical="true"
+        tools:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/textViewUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selecteer studiejaar"
+            android:layout_margin="15dp"
+            app:layout_constraintStart_toStartOf="@+id/textViewUserEmail"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserEmail" />
+
+        <Button
+            android:id="@+id/buttonGo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Studiejaar" />
+
+        <Button
+            android:id="@+id/buttonGo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="KEUZEVAKKEN" />
+
+        <Button
+            android:id="@+id/buttonGo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="VAK TOEVOEGEN"/>
+
+        <Button
+            android:layout_margin="15dp"
+            android:id="@+id/buttonLogout"
+            android:text="Uitloggen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>
