@@ -5,6 +5,7 @@ public class Course {
     String courseID;
     String courseName;
     String courseYear;
+    String coursePeriod;
     String courseEC;
     String courseGrade;
     String courseComments;
@@ -15,10 +16,11 @@ public class Course {
 
     }
 
-    public Course(String courseID, String courseName, String courseYear, String courseEC, String courseGrade, String courseComments, String courseSpecial, String courseStatus) {
+    public Course(String courseID, String courseName, String courseYear, String coursePeriod, String courseEC, String courseGrade, String courseComments, String courseSpecial, String courseStatus) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.courseYear = courseYear;
+        this.coursePeriod = coursePeriod;
         this.courseEC = courseEC;
         this.courseGrade = courseGrade;
         this.courseComments = courseComments;
@@ -36,6 +38,10 @@ public class Course {
 
     public String getCourseYear() {
         return courseYear;
+    }
+
+    public String getCoursePeriod() {
+        return coursePeriod;
     }
 
     public String getCourseEC() {

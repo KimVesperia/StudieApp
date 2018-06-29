@@ -17,6 +17,7 @@ public class AddCourseActivity extends AppCompatActivity {
 
     EditText editTextName;
     Spinner spinnerYear;
+    Spinner spinnerPeriod;
     EditText editTextEC;
     EditText editTextGrade;
     EditText editTextComments;
@@ -35,6 +36,7 @@ public class AddCourseActivity extends AppCompatActivity {
 
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerYear = (Spinner) findViewById(R.id.spinnerYear);
+        spinnerPeriod = (Spinner) findViewById(R.id.spinnerPeriod);
         editTextEC = (EditText) findViewById(R.id.editTextEC);
         editTextGrade = (EditText) findViewById(R.id.editTextGrade);
         editTextComments = (EditText) findViewById(R.id.editTextComments);
@@ -53,6 +55,7 @@ public class AddCourseActivity extends AppCompatActivity {
     private void addCourse(){
         String name = editTextName.getText().toString().trim();
         String year = spinnerYear.getSelectedItem().toString();
+        String period = spinnerPeriod.getSelectedItem().toString();
         String ec = editTextEC.getText().toString().trim();
         String grade = editTextGrade.getText().toString().trim();
         String comments = editTextComments.getText().toString().trim();
@@ -63,11 +66,13 @@ public class AddCourseActivity extends AppCompatActivity {
 
             String id = databaseCourses.push().getKey();
 
-            Course course = new Course(id, name, year, ec, grade, comments, special, status);
+            Course course = new Course(id, name, year, period, ec, grade, comments, special, status);
+
 
             databaseCourses.child(name).setValue(course);
 
             Toast.makeText(this, "Vak toegevoegd", Toast.LENGTH_LONG).show();
+            finish();
 
         }else{
             Toast.makeText(this, "Voer het vaknaam in", Toast.LENGTH_LONG).show();

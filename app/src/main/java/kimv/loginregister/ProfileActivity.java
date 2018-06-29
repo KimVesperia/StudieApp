@@ -34,7 +34,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
 
-        textViewUserEmail.setText("Welkom, " + user.getEmail());
+        //Welkoms text met username
+        textViewUserEmail.setText("Welkom, " + user.getDisplayName());
 
         Button btn1 = (Button)findViewById(R.id.buttonGo1);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +49,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, CourseListActivity.class));
+                startActivity(new Intent(ProfileActivity.this, ExtraCourseListActivity.class));
             }
         });
 

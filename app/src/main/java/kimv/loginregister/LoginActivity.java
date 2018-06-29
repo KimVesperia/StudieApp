@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //als authenticatie goed is
         //laat loadingbar zien
 
-        progressDialog.setMessage("Gebruiker registreren...");
+        progressDialog.setMessage("Gebruiker inloggen...");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(email, password)

@@ -1,15 +1,12 @@
 package kimv.loginregister;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CourseListActivity extends AppCompatActivity {
+public class ExtraCourseListActivity extends AppCompatActivity {
 
     public static final String COURSE_NAME = "coursename";
     public static final String COURSE_ID = "courseid";
@@ -40,8 +37,6 @@ public class CourseListActivity extends AppCompatActivity {
     Query query;
 
     private ProgressDialog progressDialog;
-
-    TextView textViewYearTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +78,7 @@ public class CourseListActivity extends AppCompatActivity {
 
         super.onStart();
 
-        Query query = databaseCourses.orderByChild("courseYear").equalTo("Studiejaar 1");
+        Query query = databaseCourses.orderByChild("courseSpecial").equalTo("Keuzevak");
         query.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(DataSnapshot dataSnapshot){
@@ -96,7 +91,7 @@ public class CourseListActivity extends AppCompatActivity {
                     courses.add(course);
                 }
 
-                CourseList adapter = new CourseList(CourseListActivity.this, courses);
+                CourseList adapter = new CourseList(ExtraCourseListActivity.this, courses);
                 listViewCourses.setAdapter(adapter);
 
             }

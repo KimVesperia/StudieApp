@@ -16,6 +16,7 @@ public class EditCourseActivity extends AppCompatActivity {
 
     EditText editTextName;
     Spinner spinnerYear;
+    Spinner spinnerPeriod;
     EditText editTextEC;
     EditText editTextGrade;
     EditText editTextComments;
@@ -33,6 +34,7 @@ public class EditCourseActivity extends AppCompatActivity {
 
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerYear = (Spinner) findViewById(R.id.spinnerYear);
+        spinnerPeriod = (Spinner) findViewById(R.id.spinnerPeriod);
         editTextEC = (EditText) findViewById(R.id.editTextEC);
         editTextGrade = (EditText) findViewById(R.id.editTextGrade);
         editTextComments = (EditText) findViewById(R.id.editTextComments);
@@ -44,6 +46,7 @@ public class EditCourseActivity extends AppCompatActivity {
         String id = intent.getStringExtra(CourseListActivity.COURSE_ID);
         String name = intent.getStringExtra(CourseListActivity.COURSE_NAME);
         String year = intent.getStringExtra(CourseListActivity.COURSE_YEAR);
+        String period = intent.getStringExtra(CourseListActivity.COURSE_PERIOD);
 
 
         String ec = intent.getStringExtra(CourseListActivity.COURSE_EC);
