@@ -8,7 +8,7 @@
     android:paddingTop="10dp"
     android:orientation="vertical"
     android:paddingBottom="10dp"
-    tools:context=".AddCourseActivity">
+    tools:context=".AddCourse2Activity">
 
     <TextView
         android:id="@+id/textView1"
@@ -43,12 +43,30 @@
         android:id="@+id/spinnerYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/year"
+        android:entries="@array/yeardefault2"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />
 
     <TextView
         android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Periode"
+        android:textColor="@android:color/black" />
+
+    <Spinner
+        android:id="@+id/spinnerPeriod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/period"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -68,7 +86,7 @@
         android:layout_marginRight="15dp"/>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -82,17 +100,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Voer cijfer in"
-        android:inputType="numberDecimal"
+        android:hint="Voer je cijfer of score in"
+        android:inputType="textCapCharacters"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Commentaar"
+        android:text="Notities"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:textColor="@android:color/black" />
@@ -108,11 +126,11 @@
         android:layout_marginRight="15dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Soort Vak"
+        android:text="Soort Module"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:textColor="@android:color/black" />
@@ -126,7 +144,7 @@
         android:layout_marginRight="15dp" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

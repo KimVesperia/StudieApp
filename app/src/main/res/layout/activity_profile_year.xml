@@ -8,7 +8,7 @@
     android:paddingTop="10dp"
     android:orientation="vertical"
     android:paddingBottom="10dp"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileYearActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,42 +17,42 @@
         tools:layout_centerVertical="true"
         tools:layout_centerHorizontal="true">
 
-        <TextView
-            android:id="@+id/textViewUserEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_gravity="center_horizontal" />
-
         <Button
-            android:id="@+id/buttonCourseYear"
+            android:id="@+id/buttonYear1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="Studievakken" />
+            android:text="Studiejaar 1" />
 
         <Button
-            android:id="@+id/buttonMinors"
+            android:id="@+id/buttonYear2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="Minors" />
+            android:text="Studiejaar 2" />
 
         <Button
-            android:id="@+id/buttonInterns"
+            android:id="@+id/buttonYear3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="STAGES" />
+            android:text="Studiejaar 3" />
 
         <Button
-            android:layout_margin="15dp"
-            android:id="@+id/buttonLogout"
-            android:text="Uitloggen"
+            android:id="@+id/buttonYear4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Studiejaar 4" />
+
+        <Button
+            android:id="@+id/buttonExtra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Keuzevakken" />
+
+
     </LinearLayout>
 
 

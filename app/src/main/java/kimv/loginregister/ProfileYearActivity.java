@@ -25,7 +25,7 @@ public class ProfileYearActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileYearActivity.this, ExtraCourseListActivity.class));
+                startActivity(new Intent(ProfileYearActivity.this, CourseListYear2Activity.class));
             }
         });
 
@@ -33,15 +33,23 @@ public class ProfileYearActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileYearActivity.this, AddCourseActivity.class));
+                startActivity(new Intent(ProfileYearActivity.this, CourseListYear3Activity.class));
             }
         });
 
         Button btn4 = (Button)findViewById(R.id.buttonYear4);
-        btn3.setOnClickListener(new View.OnClickListener() {
+        btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileYearActivity.this, AddCourseActivity.class));
+                startActivity(new Intent(ProfileYearActivity.this, CourseListYear4Activity.class));
+            }
+        });
+
+        Button btn5 = (Button)findViewById(R.id.buttonExtra);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileYearActivity.this, CourseListExtraActivity.class));
             }
         });
 

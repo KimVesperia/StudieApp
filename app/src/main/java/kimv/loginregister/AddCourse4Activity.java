@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -13,7 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AddCourseActivity extends AppCompatActivity {
+public class AddCourse4Activity extends AppCompatActivity {
 
     EditText editTextName;
     Spinner spinnerYear;
@@ -30,17 +29,19 @@ public class AddCourseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addcourse);
+        setContentView(R.layout.activity_add_course4);
 
-        databaseCourses = FirebaseDatabase.getInstance().getReference("courses");
+        databaseCourses = FirebaseDatabase.getInstance().getReference("year4");
 
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerYear = (Spinner) findViewById(R.id.spinnerYear);
+        spinnerYear.setEnabled(false);
         spinnerPeriod = (Spinner) findViewById(R.id.spinnerPeriod);
         editTextEC = (EditText) findViewById(R.id.editTextEC);
         editTextGrade = (EditText) findViewById(R.id.editTextGrade);
         editTextComments = (EditText) findViewById(R.id.editTextComments);
         spinnerSpecial = (Spinner) findViewById(R.id.spinnerSpecial);
+        spinnerSpecial.setEnabled(false);
         spinnerStatus = (Spinner) findViewById(R.id.spinnerStatus);
         buttonAddCourse = (Button) findViewById(R.id.buttonAddCourse);
 
@@ -67,7 +68,6 @@ public class AddCourseActivity extends AppCompatActivity {
             String id = databaseCourses.push().getKey();
 
             Course course = new Course(id, name, year, period, ec, grade, comments, special, status);
-
 
             databaseCourses.child(name).setValue(course);
 

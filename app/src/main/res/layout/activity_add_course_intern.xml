@@ -8,7 +8,7 @@
     android:paddingTop="10dp"
     android:orientation="vertical"
     android:paddingBottom="10dp"
-    tools:context=".EditCourseYear1Activity">
+    tools:context=".AddCourseInternActivity">
 
     <TextView
         android:id="@+id/textView1"
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:text="Vak"
+        android:text="Stage"
         android:textColor="@android:color/black" />
 
     <EditText
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Voer vaknaam in"
+        android:hint="Voer stageplaats in"
         android:inputType="textPersonName|textCapCharacters"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />
@@ -43,7 +43,7 @@
         android:id="@+id/spinnerYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/year"
+        android:entries="@array/yeardefault5"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />
 
@@ -54,14 +54,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:text="Periode"
+        android:text="Semester"
         android:textColor="@android:color/black" />
 
     <Spinner
         android:id="@+id/spinnerPeriod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/period"
+        android:entries="@array/semester"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />
 
@@ -130,7 +130,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Soort Vak"
+        android:text="Soort Module"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:textColor="@android:color/black" />
@@ -139,7 +139,7 @@
         android:id="@+id/spinnerSpecial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/special"
+        android:entries="@array/special3"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />
 
@@ -166,7 +166,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Vak Toevoegen"
+        android:text="Stage Toevoegen"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />
 

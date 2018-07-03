@@ -43,17 +43,17 @@ public class EditCourseActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String id = intent.getStringExtra(CourseListActivity.COURSE_ID);
-        String name = intent.getStringExtra(CourseListActivity.COURSE_NAME);
-        String year = intent.getStringExtra(CourseListActivity.COURSE_YEAR);
-        String period = intent.getStringExtra(CourseListActivity.COURSE_PERIOD);
+        String id = intent.getStringExtra(CourseListYear1Activity.COURSE_ID);
+        String name = intent.getStringExtra(CourseListYear1Activity.COURSE_NAME);
+        String year = intent.getStringExtra(CourseListYear1Activity.COURSE_YEAR);
+        String period = intent.getStringExtra(CourseListYear1Activity.COURSE_PERIOD);
 
 
-        String ec = intent.getStringExtra(CourseListActivity.COURSE_EC);
-        String grade = intent.getStringExtra(CourseListActivity.COURSE_GRADE);
-        String comments = intent.getStringExtra(CourseListActivity.COURSE_COMMENT);
-        String special = intent.getStringExtra(CourseListActivity.COURSE_SPECIAL);
-        String status = intent.getStringExtra(CourseListActivity.COURSE_STATUS);
+        String ec = intent.getStringExtra(CourseListYear1Activity.COURSE_EC);
+        String grade = intent.getStringExtra(CourseListYear1Activity.COURSE_GRADE);
+        String comments = intent.getStringExtra(CourseListYear1Activity.COURSE_COMMENT);
+        String special = intent.getStringExtra(CourseListYear1Activity.COURSE_SPECIAL);
+        String status = intent.getStringExtra(CourseListYear1Activity.COURSE_STATUS);
 
         editTextName.setText(name);
 

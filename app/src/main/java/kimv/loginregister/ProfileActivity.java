@@ -37,27 +37,28 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //Welkoms text met username
         textViewUserEmail.setText("Welkom, " + user.getDisplayName());
 
-        Button btn1 = (Button)findViewById(R.id.buttonGo1);
+        Button btn1 = (Button)findViewById(R.id.buttonCourseYear);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, CourseListActivity.class));
+                startActivity(new Intent(ProfileActivity.this, ProfileYearActivity.class));
             }
         });
 
-        Button btn2 = (Button)findViewById(R.id.buttonGo2);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, ExtraCourseListActivity.class));
-            }
-        });
 
-        Button btn3 = (Button)findViewById(R.id.buttonGo3);
+        Button btn3 = (Button)findViewById(R.id.buttonMinors);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, AddCourseActivity.class));
+                startActivity(new Intent(ProfileActivity.this, CourseListMinorsActivity.class));
+            }
+        });
+
+        Button btn4 = (Button)findViewById(R.id.buttonInterns);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, CourseListInternsActivity.class));
             }
         });
 

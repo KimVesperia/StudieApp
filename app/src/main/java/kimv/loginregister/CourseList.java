@@ -30,6 +30,7 @@ public class CourseList extends ArrayAdapter<Course>{
         View listViewItem = inflater.inflate(R.layout.list_layout, null, true);
 
         TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
+        TextView textViewYear = (TextView) listViewItem.findViewById(R.id.textViewYear);
         TextView textViewEC = (TextView) listViewItem.findViewById(R.id.textViewEC);
         TextView textViewGrade = (TextView) listViewItem.findViewById(R.id.textViewGrade);
         TextView textViewComments = (TextView) listViewItem.findViewById(R.id.textViewComments);
@@ -39,6 +40,7 @@ public class CourseList extends ArrayAdapter<Course>{
         Course course = courseList.get(position);
 
         textViewName.setText(course.getCourseName() + " | " + course.getCoursePeriod());
+        textViewYear.setText(course.getCourseYear());
         textViewEC.setText(course.getCourseEC());
         textViewGrade.setText(course.getCourseGrade());
         textViewComments.setText(course.getCourseComments());
