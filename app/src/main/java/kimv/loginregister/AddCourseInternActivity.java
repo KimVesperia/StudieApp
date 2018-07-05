@@ -31,7 +31,7 @@ public class AddCourseInternActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course_intern);
 
-        databaseCourses = FirebaseDatabase.getInstance().getReference("interns");
+        databaseCourses = FirebaseDatabase.getInstance().getReference("courses/interns");
 
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerYear = (Spinner) findViewById(R.id.spinnerYear);
@@ -70,11 +70,11 @@ public class AddCourseInternActivity extends AppCompatActivity {
 
             databaseCourses.child(name).setValue(course);
 
-            Toast.makeText(this, "Vak toegevoegd", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Stage Succesvol Toegevoegd", Toast.LENGTH_LONG).show();
             finish();
 
         }else{
-            Toast.makeText(this, "Voer het vaknaam in", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Voer het modulenaam in", Toast.LENGTH_LONG).show();
         }
     }
 }

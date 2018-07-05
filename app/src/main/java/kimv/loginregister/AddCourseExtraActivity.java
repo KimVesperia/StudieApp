@@ -31,7 +31,7 @@ public class AddCourseExtraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course_extra);
 
-        databaseCourses = FirebaseDatabase.getInstance().getReference("extra");
+        databaseCourses = FirebaseDatabase.getInstance().getReference("courses/extra");
 
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerYear = (Spinner) findViewById(R.id.spinnerYear);
@@ -70,11 +70,11 @@ public class AddCourseExtraActivity extends AppCompatActivity {
 
             databaseCourses.child(name).setValue(course);
 
-            Toast.makeText(this, "Vak toegevoegd", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Keuzevak Succesvol Toegevoegd", Toast.LENGTH_LONG).show();
             finish();
 
         }else{
-            Toast.makeText(this, "Voer het vaknaam in", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Voer het keuzevak in", Toast.LENGTH_LONG).show();
         }
     }
 }

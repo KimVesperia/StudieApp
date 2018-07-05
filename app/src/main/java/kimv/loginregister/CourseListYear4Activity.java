@@ -1,15 +1,24 @@
 package kimv.loginregister;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,15 +32,6 @@ import java.util.List;
 
 public class CourseListYear4Activity extends AppCompatActivity {
 
-    public static final String COURSE_NAME = "coursename";
-    public static final String COURSE_ID = "courseid";
-    public static final String COURSE_YEAR = "courseyear";
-    public static final String COURSE_PERIOD = "courseperiod";
-    public static final String COURSE_EC = "courseec";
-    public static final String COURSE_GRADE = "coursegrade";
-    public static final String COURSE_COMMENT = "coursecomment";
-    public static final String COURSE_SPECIAL = "coursespecial";
-    public static final String COURSE_STATUS = "coursestatus";
 
     ListView listViewCourses;
     List<Course> courses;
@@ -47,7 +47,7 @@ public class CourseListYear4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courselist);
 
-        databaseCourses = FirebaseDatabase.getInstance().getReference("year4");
+        databaseCourses = FirebaseDatabase.getInstance().getReference("courses/year4");
 
         FloatingActionButton fab = findViewById(R.id.addCourse);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -64,24 +64,101 @@ public class CourseListYear4Activity extends AppCompatActivity {
         listViewCourses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
                 Course course = courses.get(i);
 
-                Intent intent = new Intent(getApplicationContext(), EditCourseActivity.class);
+                showUpdateDialog(course.getCourseID(), course.getCourseName(), course.getCourseEC(), course.getCourseGrade(), course.getCourseComments());
 
-                intent.putExtra(COURSE_ID, course.getCourseID());
-                intent.putExtra(COURSE_NAME, course.getCourseName());
-                intent.putExtra(COURSE_YEAR, course.getCourseYear());
-                intent.putExtra(COURSE_PERIOD, course.getCoursePeriod());
-                intent.putExtra(COURSE_EC, course.getCourseEC());
-                intent.putExtra(COURSE_GRADE, course.getCourseGrade());
-                intent.putExtra(COURSE_COMMENT, course.getCourseComments());
-                intent.putExtra(COURSE_SPECIAL, course.getCourseSpecial());
-                intent.putExtra(COURSE_STATUS, course.getCourseStatus());
-
-                startActivity(intent);
             }
         });
 
+    }
+
+    private void showUpdateDialog(final String courseId, final String courseName, String courseEC, String courseGrade, String courseComments){
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+
+        LayoutInflater inflater = getLayoutInflater();
+
+        final View dialogView = inflater.inflate(R.layout.update_dialog4, null);
+
+        dialogBuilder.setView(dialogView);
+
+        final EditText editTextName = (EditText) dialogView.findViewById(R.id.editTextName);
+        editTextName.setText(courseName);
+        editTextName.setEnabled(false);
+        final Spinner spinnerYear = (Spinner) dialogView.findViewById(R.id.spinnerYear);
+        spinnerYear.setEnabled(false);
+        final Spinner spinnerPeriod = (Spinner) dialogView.findViewById(R.id.spinnerPeriod);
+        final EditText editTextEC = (EditText) dialogView.findViewById(R.id.editTextEC);
+        editTextEC.setText(courseEC);
+        final EditText editTextGrade = (EditText) dialogView.findViewById(R.id.editTextGrade);
+        editTextGrade.setText(courseGrade);
+        final EditText editTextComments = (EditText) dialogView.findViewById(R.id.editTextComments);
+        editTextComments.setText(courseComments);
+        final Spinner spinnerSpecial = (Spinner) dialogView.findViewById(R.id.spinnerSpecial);
+        spinnerSpecial.setEnabled(false);
+        final Spinner spinnerStatus = (Spinner) dialogView.findViewById(R.id.spinnerStatus);
+        final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdate);
+        final Button buttonDelete = (Button) dialogView.findViewById(R.id.buttonDelete);
+
+        dialogBuilder.setTitle("Aanpassingen");
+
+        final AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = editTextName.getText().toString().trim();
+                String year = spinnerYear.getSelectedItem().toString();
+                String period = spinnerPeriod.getSelectedItem().toString();
+                String ec = editTextEC.getText().toString().trim();
+                String grade = editTextGrade.getText().toString().trim();
+                String comments = editTextComments.getText().toString().trim();
+                String special = spinnerSpecial.getSelectedItem().toString();
+                String status = spinnerStatus.getSelectedItem().toString();
+
+                if(TextUtils.isEmpty(name)){
+                    editTextName.setError("Voer een vaknaam in...");
+                    return;
+                }
+
+                updateCourse(courseId, name, year, period, ec, grade, comments, special, status);
+
+                alertDialog.dismiss();
+
+            }
+        });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteCourse(courseName);
+                alertDialog.dismiss();
+            }
+        });
+
+    }
+
+    private void deleteCourse(String courseName){
+        DatabaseReference drCourse = FirebaseDatabase.getInstance().getReference("courses/year4").child(courseName);
+        drCourse.removeValue();
+
+        Toast.makeText(this, "Verwijdering Succesvol", Toast.LENGTH_LONG).show();
+    }
+
+    private boolean updateCourse(String id, String name, String year, String period, String ec, String grade, String comments, String special, String status){
+
+        DatabaseReference databaseCourses = FirebaseDatabase.getInstance().getReference("courses/year4").child(name);
+
+        Course course = new Course(id, name, year, period, ec, grade, comments, special, status);
+
+        databaseCourses.setValue(course);
+
+        Toast.makeText(this, "Vak Succesvol Aangepast", Toast.LENGTH_LONG).show();
+
+        return true;
     }
 
     @Override

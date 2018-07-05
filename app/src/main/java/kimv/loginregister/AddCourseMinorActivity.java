@@ -31,7 +31,7 @@ public class AddCourseMinorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course_minor);
 
-        databaseCourses = FirebaseDatabase.getInstance().getReference("minors");
+        databaseCourses = FirebaseDatabase.getInstance().getReference("courses/minors");
 
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerYear = (Spinner) findViewById(R.id.spinnerYear);
@@ -70,11 +70,11 @@ public class AddCourseMinorActivity extends AppCompatActivity {
 
             databaseCourses.child(name).setValue(course);
 
-            Toast.makeText(this, "Vak toegevoegd", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Minor Succesvol Toegevoegd", Toast.LENGTH_LONG).show();
             finish();
 
         }else{
-            Toast.makeText(this, "Voer het vaknaam in", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Voer het modulenaam in", Toast.LENGTH_LONG).show();
         }
     }
 }

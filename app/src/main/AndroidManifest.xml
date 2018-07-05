@@ -64,10 +64,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
 
-        <activity
-            android:name=".EditCourseActivity"
-            android:label="Vak Aanpassen" />
-
         <activity android:name=".ProfileYearActivity" />
 
     </application>

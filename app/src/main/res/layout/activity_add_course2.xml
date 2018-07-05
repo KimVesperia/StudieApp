@@ -120,7 +120,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="..."
+        android:hint="Notities, deadlines etc..."
         android:inputType="textPersonName|textCapSentences|textMultiLine"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />

@@ -31,7 +31,7 @@ public class AddCourse4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course4);
 
-        databaseCourses = FirebaseDatabase.getInstance().getReference("year4");
+        databaseCourses = FirebaseDatabase.getInstance().getReference("courses/year4");
 
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerYear = (Spinner) findViewById(R.id.spinnerYear);
@@ -71,7 +71,7 @@ public class AddCourse4Activity extends AppCompatActivity {
 
             databaseCourses.child(name).setValue(course);
 
-            Toast.makeText(this, "Vak toegevoegd", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Vak Succesvol Toegevoegd", Toast.LENGTH_LONG).show();
             finish();
 
         }else{
